@@ -13,7 +13,7 @@ public:
         double x2 = 0;
 
         Solve(a, b, c, x1, x2);
-        TSM_ASSERT_EQUALS("x1", x1, -1);
+        TSM_ASSERT_EQUALS("x1 pupupu", x1, 1);
         TSM_ASSERT_EQUALS("x2", x1, -1);
 
     }
