@@ -27,11 +27,29 @@ static MyTestSuite suite_MyTestSuite;
 static CxxTest::List Tests_MyTestSuite = { 0, 0 };
 CxxTest::StaticSuiteDescription suiteDescription_MyTestSuite( "Tests.h", 5, "MyTestSuite", suite_MyTestSuite, Tests_MyTestSuite );
 
-static class TestDescription_suite_MyTestSuite_testSolving : public CxxTest::RealTestDescription {
+static class TestDescription_suite_MyTestSuite_testArguments : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite_testSolving() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 8, "testSolving" ) {}
- void runTest() { suite_MyTestSuite.testSolving(); }
-} testDescription_suite_MyTestSuite_testSolving;
+ TestDescription_suite_MyTestSuite_testArguments() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 8, "testArguments" ) {}
+ void runTest() { suite_MyTestSuite.testArguments(); }
+} testDescription_suite_MyTestSuite_testArguments;
+
+static class TestDescription_suite_MyTestSuite_testNegativeD : public CxxTest::RealTestDescription {
+public:
+ TestDescription_suite_MyTestSuite_testNegativeD() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 33, "testNegativeD" ) {}
+ void runTest() { suite_MyTestSuite.testNegativeD(); }
+} testDescription_suite_MyTestSuite_testNegativeD;
+
+static class TestDescription_suite_MyTestSuite_testPositiveValues : public CxxTest::RealTestDescription {
+public:
+ TestDescription_suite_MyTestSuite_testPositiveValues() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 45, "testPositiveValues" ) {}
+ void runTest() { suite_MyTestSuite.testPositiveValues(); }
+} testDescription_suite_MyTestSuite_testPositiveValues;
+
+static class TestDescription_suite_MyTestSuite_testNegativeValues : public CxxTest::RealTestDescription {
+public:
+ TestDescription_suite_MyTestSuite_testNegativeValues() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 58, "testNegativeValues" ) {}
+ void runTest() { suite_MyTestSuite.testNegativeValues(); }
+} testDescription_suite_MyTestSuite_testNegativeValues;
 
 #include <cxxtest/Root.cpp>
 const char* CxxTest::RealWorldDescription::_worldName = "cxxtest";
