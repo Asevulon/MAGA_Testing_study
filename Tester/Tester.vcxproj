@@ -114,10 +114,7 @@
       <AdditionalDependencies>Solver.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>python ..\tools\cxxtest-4.4\bin\cxxtestgen.py --error-printer -o runner.cpp Tests.h
-cd ..\$(IntDir)
-g++ -m64 -std=c++14 -I ../../Solver -I ../../Tester -I ../../tools/cxxtest-4.4 -L . ../../Tester/runner.cpp -lSolver -o runner.exe
-runner.exe</Command>
+      <Command>..\tools\Python34\python.exe ..\tools\cxxtest-4.4\bin\cxxtestgen.py --error-printer -o runner.cpp Tests.h</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -140,10 +137,7 @@ runner.exe</Command>
       <AdditionalDependencies>Solver.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>python ..\tools\cxxtest-4.4\bin\cxxtestgen.py --error-printer -o runner.cpp Tests.h
-cd ..\$(IntDir)
-g++ -m64 -std=c++14 -I ../../Solver -I ../../Tester -I ../../tools/cxxtest-4.4 -L . ../../Tester/runner.cpp -lSolver -o runner.exe
-runner.exe</Command>
+      <Command>..\tools\Python34\python.exe ..\tools\cxxtest-4.4\bin\cxxtestgen.py --error-printer -o runner.cpp Tests.h</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
