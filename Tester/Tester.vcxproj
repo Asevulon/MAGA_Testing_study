@@ -114,7 +114,7 @@
       <AdditionalDependencies>Solver.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>..\tools\Python34\python.exe ..\tools\cxxtest-4.4\bin\cxxtestgen.py --error-printer -o runner.cpp Tests.h</Command>
+      <Command>..\tools\Python34\python.exe ..\tools\cxxtest-4.4\bin\cxxtestgen.py --runner=XmlPrinter -o runner.cpp Tests.h</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -137,7 +137,7 @@
       <AdditionalDependencies>Solver.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>..\tools\Python34\python.exe ..\tools\cxxtest-4.4\bin\cxxtestgen.py --error-printer -o runner.cpp Tests.h</Command>
+      <Command>..\tools\Python34\python.exe ..\tools\cxxtest-4.4\bin\cxxtestgen.py --runner=XmlPrinter -o runner.cpp Tests.h</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

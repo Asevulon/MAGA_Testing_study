@@ -12,8 +12,6 @@ enum ErrorCode {
 extern "C" int Solve(double a, double b, double c, double& x1, double& x2) {
 
 	if (a == 0)return WrongArgument;
-	if (b == 0)return WrongArgument;
-	if (c == 0)return WrongArgument;
 
 	double D = b * b - 4 * a * c;
 	if (D < 0)return NegativeD;
