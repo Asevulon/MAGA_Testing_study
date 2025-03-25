@@ -56,29 +56,41 @@ public:
  void runTest() { suite_MyTestSuite.testZeroBCoefficientValid(); }
 } testDescription_suite_MyTestSuite_testZeroBCoefficientValid;
 
-static class TestDescription_suite_MyTestSuite_testZeroBCoefficientValidWithPositiveDiscrimenant : public CxxTest::RealTestDescription {
-public:
- TestDescription_suite_MyTestSuite_testZeroBCoefficientValidWithPositiveDiscrimenant() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 74, "testZeroBCoefficientValidWithPositiveDiscrimenant" ) {}
- void runTest() { suite_MyTestSuite.testZeroBCoefficientValidWithPositiveDiscrimenant(); }
-} testDescription_suite_MyTestSuite_testZeroBCoefficientValidWithPositiveDiscrimenant;
-
 static class TestDescription_suite_MyTestSuite_testZeroCCoefficientValid : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite_testZeroCCoefficientValid() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 88, "testZeroCCoefficientValid" ) {}
+ TestDescription_suite_MyTestSuite_testZeroCCoefficientValid() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 76, "testZeroCCoefficientValid" ) {}
  void runTest() { suite_MyTestSuite.testZeroCCoefficientValid(); }
 } testDescription_suite_MyTestSuite_testZeroCCoefficientValid;
 
 static class TestDescription_suite_MyTestSuite_testNegativeCoefficientsHandling : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite_testNegativeCoefficientsHandling() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 102, "testNegativeCoefficientsHandling" ) {}
+ TestDescription_suite_MyTestSuite_testNegativeCoefficientsHandling() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 90, "testNegativeCoefficientsHandling" ) {}
  void runTest() { suite_MyTestSuite.testNegativeCoefficientsHandling(); }
 } testDescription_suite_MyTestSuite_testNegativeCoefficientsHandling;
 
-static class TestDescription_suite_MyTestSuite_testAllZeroCoefficientsError : public CxxTest::RealTestDescription {
+static class TestDescription_suite_MyTestSuite_testANearZeroPositive : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite_testAllZeroCoefficientsError() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 116, "testAllZeroCoefficientsError" ) {}
- void runTest() { suite_MyTestSuite.testAllZeroCoefficientsError(); }
-} testDescription_suite_MyTestSuite_testAllZeroCoefficientsError;
+ TestDescription_suite_MyTestSuite_testANearZeroPositive() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 104, "testANearZeroPositive" ) {}
+ void runTest() { suite_MyTestSuite.testANearZeroPositive(); }
+} testDescription_suite_MyTestSuite_testANearZeroPositive;
+
+static class TestDescription_suite_MyTestSuite_testANearZeroNegative : public CxxTest::RealTestDescription {
+public:
+ TestDescription_suite_MyTestSuite_testANearZeroNegative() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 117, "testANearZeroNegative" ) {}
+ void runTest() { suite_MyTestSuite.testANearZeroNegative(); }
+} testDescription_suite_MyTestSuite_testANearZeroNegative;
+
+static class TestDescription_suite_MyTestSuite_testDNearZeroPositive : public CxxTest::RealTestDescription {
+public:
+ TestDescription_suite_MyTestSuite_testDNearZeroPositive() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 130, "testDNearZeroPositive" ) {}
+ void runTest() { suite_MyTestSuite.testDNearZeroPositive(); }
+} testDescription_suite_MyTestSuite_testDNearZeroPositive;
+
+static class TestDescription_suite_MyTestSuite_testDNearZeroNegative : public CxxTest::RealTestDescription {
+public:
+ TestDescription_suite_MyTestSuite_testDNearZeroNegative() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 156, "testDNearZeroNegative" ) {}
+ void runTest() { suite_MyTestSuite.testDNearZeroNegative(); }
+} testDescription_suite_MyTestSuite_testDNearZeroNegative;
 
 #include <cxxtest/Root.cpp>
 const char* CxxTest::RealWorldDescription::_worldName = "cxxtest";
