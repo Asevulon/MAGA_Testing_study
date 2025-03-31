@@ -4,6 +4,7 @@
 #define CXXTEST_RUNNING
 #endif
 
+#define _CXXTEST_HAVE_STD
 #include <cxxtest/TestListener.h>
 #include <cxxtest/TestTracker.h>
 #include <cxxtest/TestRunner.h>
@@ -26,71 +27,53 @@ static MyTestSuite suite_MyTestSuite;
 static CxxTest::List Tests_MyTestSuite = { 0, 0 };
 CxxTest::StaticSuiteDescription suiteDescription_MyTestSuite( "Tests.h", 5, "MyTestSuite", suite_MyTestSuite, Tests_MyTestSuite );
 
-static class TestDescription_suite_MyTestSuite_testTwoDistinctRoots : public CxxTest::RealTestDescription {
-public:
- TestDescription_suite_MyTestSuite_testTwoDistinctRoots() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 9, "testTwoDistinctRoots" ) {}
- void runTest() { suite_MyTestSuite.testTwoDistinctRoots(); }
-} testDescription_suite_MyTestSuite_testTwoDistinctRoots;
-
 static class TestDescription_suite_MyTestSuite_testSingleRoot : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite_testSingleRoot() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 24, "testSingleRoot" ) {}
+ TestDescription_suite_MyTestSuite_testSingleRoot() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 11, "testSingleRoot" ) {}
  void runTest() { suite_MyTestSuite.testSingleRoot(); }
 } testDescription_suite_MyTestSuite_testSingleRoot;
 
-static class TestDescription_suite_MyTestSuite_testNegativeDiscriminant : public CxxTest::RealTestDescription {
+static class TestDescription_suite_MyTestSuite_testTwoRoots : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite_testNegativeDiscriminant() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 38, "testNegativeDiscriminant" ) {}
- void runTest() { suite_MyTestSuite.testNegativeDiscriminant(); }
-} testDescription_suite_MyTestSuite_testNegativeDiscriminant;
+ TestDescription_suite_MyTestSuite_testTwoRoots() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 25, "testTwoRoots" ) {}
+ void runTest() { suite_MyTestSuite.testTwoRoots(); }
+} testDescription_suite_MyTestSuite_testTwoRoots;
 
-static class TestDescription_suite_MyTestSuite_testZeroACoefficientError : public CxxTest::RealTestDescription {
+static class TestDescription_suite_MyTestSuite_testZeroRoots : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite_testZeroACoefficientError() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 50, "testZeroACoefficientError" ) {}
- void runTest() { suite_MyTestSuite.testZeroACoefficientError(); }
-} testDescription_suite_MyTestSuite_testZeroACoefficientError;
+ TestDescription_suite_MyTestSuite_testZeroRoots() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 38, "testZeroRoots" ) {}
+ void runTest() { suite_MyTestSuite.testZeroRoots(); }
+} testDescription_suite_MyTestSuite_testZeroRoots;
 
-static class TestDescription_suite_MyTestSuite_testZeroBCoefficientValid : public CxxTest::RealTestDescription {
+static class TestDescription_suite_MyTestSuite_testLinearAboveZero : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite_testZeroBCoefficientValid() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 62, "testZeroBCoefficientValid" ) {}
- void runTest() { suite_MyTestSuite.testZeroBCoefficientValid(); }
-} testDescription_suite_MyTestSuite_testZeroBCoefficientValid;
+ TestDescription_suite_MyTestSuite_testLinearAboveZero() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 49, "testLinearAboveZero" ) {}
+ void runTest() { suite_MyTestSuite.testLinearAboveZero(); }
+} testDescription_suite_MyTestSuite_testLinearAboveZero;
 
-static class TestDescription_suite_MyTestSuite_testZeroCCoefficientValid : public CxxTest::RealTestDescription {
+static class TestDescription_suite_MyTestSuite_testLinearBelowZero : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite_testZeroCCoefficientValid() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 76, "testZeroCCoefficientValid" ) {}
- void runTest() { suite_MyTestSuite.testZeroCCoefficientValid(); }
-} testDescription_suite_MyTestSuite_testZeroCCoefficientValid;
+ TestDescription_suite_MyTestSuite_testLinearBelowZero() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 62, "testLinearBelowZero" ) {}
+ void runTest() { suite_MyTestSuite.testLinearBelowZero(); }
+} testDescription_suite_MyTestSuite_testLinearBelowZero;
 
-static class TestDescription_suite_MyTestSuite_testNegativeCoefficientsHandling : public CxxTest::RealTestDescription {
+static class TestDescription_suite_MyTestSuite_testAboveEpsilonBorder : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite_testNegativeCoefficientsHandling() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 90, "testNegativeCoefficientsHandling" ) {}
- void runTest() { suite_MyTestSuite.testNegativeCoefficientsHandling(); }
-} testDescription_suite_MyTestSuite_testNegativeCoefficientsHandling;
+ TestDescription_suite_MyTestSuite_testAboveEpsilonBorder() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 75, "testAboveEpsilonBorder" ) {}
+ void runTest() { suite_MyTestSuite.testAboveEpsilonBorder(); }
+} testDescription_suite_MyTestSuite_testAboveEpsilonBorder;
 
-static class TestDescription_suite_MyTestSuite_testANearZeroPositive : public CxxTest::RealTestDescription {
+static class TestDescription_suite_MyTestSuite_testBelowEpsilonBorder : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite_testANearZeroPositive() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 104, "testANearZeroPositive" ) {}
- void runTest() { suite_MyTestSuite.testANearZeroPositive(); }
-} testDescription_suite_MyTestSuite_testANearZeroPositive;
+ TestDescription_suite_MyTestSuite_testBelowEpsilonBorder() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 87, "testBelowEpsilonBorder" ) {}
+ void runTest() { suite_MyTestSuite.testBelowEpsilonBorder(); }
+} testDescription_suite_MyTestSuite_testBelowEpsilonBorder;
 
-static class TestDescription_suite_MyTestSuite_testANearZeroNegative : public CxxTest::RealTestDescription {
+static class TestDescription_suite_MyTestSuite_testInfSol : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite_testANearZeroNegative() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 117, "testANearZeroNegative" ) {}
- void runTest() { suite_MyTestSuite.testANearZeroNegative(); }
-} testDescription_suite_MyTestSuite_testANearZeroNegative;
-
-static class TestDescription_suite_MyTestSuite_testDNearZeroPositive : public CxxTest::RealTestDescription {
-public:
- TestDescription_suite_MyTestSuite_testDNearZeroPositive() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 130, "testDNearZeroPositive" ) {}
- void runTest() { suite_MyTestSuite.testDNearZeroPositive(); }
-} testDescription_suite_MyTestSuite_testDNearZeroPositive;
-
-static class TestDescription_suite_MyTestSuite_testDNearZeroNegative : public CxxTest::RealTestDescription {
-public:
- TestDescription_suite_MyTestSuite_testDNearZeroNegative() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 156, "testDNearZeroNegative" ) {}
- void runTest() { suite_MyTestSuite.testDNearZeroNegative(); }
-} testDescription_suite_MyTestSuite_testDNearZeroNegative;
+ TestDescription_suite_MyTestSuite_testInfSol() : CxxTest::RealTestDescription( Tests_MyTestSuite, suiteDescription_MyTestSuite, 99, "testInfSol" ) {}
+ void runTest() { suite_MyTestSuite.testInfSol(); }
+} testDescription_suite_MyTestSuite_testInfSol;
 
 #include <cxxtest/Root.cpp>
 const char* CxxTest::RealWorldDescription::_worldName = "cxxtest";

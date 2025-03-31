@@ -8,4 +8,4 @@
 #define MATHLIBRARY_API __declspec(dllimport)
 #endif
 
-extern "C" MATHLIBRARY_API int Solve(double a, double b, double c, double& x1, double& x2);
+extern "C" MATHLIBRARY_API int Solve(double a, double b, double c, double epsilon, double& x1, double& x2);
